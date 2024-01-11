@@ -1,4 +1,4 @@
-23.2.0 (To be determined)
+23.2.0 (January 10, 2024)
 =========================
 New feature release in the 23.2.x series.
 
@@ -33,7 +33,8 @@ This release resolves a number of issues with fieldmaps inducing distortions
 during correction. Phase difference and direct fieldmaps are now masked correctly,
 preventing the overestimation of distortions outside the brain. Additionally,
 we now implement Jacobian weighting during unwarping, which corrects for compression
-and expansion effects on signal intensity.
+and expansion effects on signal intensity. To disable Jacobian weighting, use
+``--ignore fmap-jacobian``.
 
 Finally, a new resampling method has been added, to better account for
 susceptibility distortion and motion in a single shot resampling to a volumetric
@@ -50,6 +51,7 @@ target space. We anticipate extending this to surface targets in the future.
 * FIX: Connect EPI-to-fieldmap transform (#3099)
 * FIX: Use Py2-compatible version file template for fmriprep-docker (#3101)
 * FIX: Update connections to unwarp_wf, convert ITK transforms to text (#3077)
+* ENH: Allow --ignore fmap-jacobian to disable Jacobian determinant modulation during fieldmap correction (#3186)
 * ENH: Exclude non-steady-state volumes from confound correlation plot (#3171)
 * ENH: Pass FLAIR images to anatomical workflow builder to include in boilerplate (#3146)
 * ENH: Restore carpetplot and other final adjustments (#3131)

@@ -327,6 +327,7 @@ configured with cubic B-spline interpolation.
         fieldmap_id=fieldmap_id if not multiecho else None,
         omp_nthreads=omp_nthreads,
         mem_gb=mem_gb,
+        jacobian='fmap-jacobian' not in config.workflow.ignore,
         name='bold_anat_wf',
     )
     bold_anat_wf.inputs.inputnode.resolution = "native"
