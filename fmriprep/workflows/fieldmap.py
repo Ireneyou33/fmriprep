@@ -122,8 +122,7 @@ Setting-up fieldmap "{estimator.bids_id}" ({estimator.method}) with \
                 else:
                     raise NotImplementedError("Sophisticated PEPOLAR schemes are unsupported.")
 
-
-    return clean_datasinks(fmap_wf), estimator_map
+    return fmap_wf, estimator_map
 
 
 def map_fieldmap_estimation(
